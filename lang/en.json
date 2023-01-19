@@ -1,365 +1,242 @@
 {
-    "commands": {
-        "developers": {
-            "categoryName": "DEVELOPER",
-            "eval": {
-                "description": "Bot için değerlendirin.",
-                "errorString": "Hata!",
-                "noCode": "Kod sağlanmadı",
-                "inputString": "Giriş",
-                "outputString": "Çıktı",
-                "usage": "{prefix}eval <some code>"
-            }
-        },
-        "general": {
-            "about": {
-                "aboutFooter": "{botname} -  Bot Bilgileri ❤️",
-                "botUptimeString": "Bot Uptime",
-                "botVersionString": "Bot versiyonu",
-                "cachedUsersString": "Önbelleğe alınmış kullanıcılar",
-                "channelsString": "Kanallar",
-                "commitString": "işlem",
-                "description": "Botun bilgilerini göster",
-                "discordJSVersionString": "Discord.js version",
-                "ffmpegVersionString": "FFmpeg version",
-                "nodeVersionString": "Node.js version",
-                "osUptimeString": "OS Uptime",
-                "processUptimeString": "Process Uptime",
-                "serversString": "Sunucular",
-                "sourceCodeString": "Kaynak Kodlar:"
-            },
-            "categoryName": "GENEL",
-            "help": {
-                "aliasesString": "Aliases",
-                "authorString": "{username} - Komut Listesi",
-                "commandDetailTitle": "{username} - {command} Komutu hakkında bilgi",
-                "commandSelectionString": "Lütfen bir komut seçin",
-                "commandUsageFooter": "<> = gereklidir | [] = İsteğe bağlı {devOnly}",
-                "description": "Belirli bir komut için, komut listesini veya bilgileri gösterir",
-                "descriptionString": "Açıklama",
-                "footerString": "{prefix}help <command> Belirli bir komut hakkında daha fazla bilgi almanızı sağlar",
-                "nameString": "İsim",
-                "noCommanSuggest": "Eşleşen komut adı bulunamadı. Bunu mu demek istedin?",
-                "noCommand": "Eşleşen herhangi bir komut adı bulunamadı ",
-                "slashDescription": "Komutla ilgili belirli bilgileri görüntülemek için komut adı",
-                "usage": "{prefix}help [command]",
-                "usageString": "Kullanım"
-            },
-            "invite": {
-                "clickURL": "<:davet:1057737630164459520> Botu sunucuza davet etmek için **[Buraya Tıkla]({url})**  ",
-                "description": "Botun Davet Linki",
-                "inviteTitle": "{bot} - Davet Linki"
-            },
-            "ping": {
-                "description": "Botun mevcut pingini gösterir",
-                "footerString": "Gecikme süresi {user}"
-            }
-        },
-        "moderation": {
-            "ban": {
-                "banFail": "<:hata:1052661120692932688> Kullanıcı **`BANLANAMADI`**, çünkü: `{message}`",
-                "banSuccess": "<:tamamlandi:1052661080213684234> **{user}** adlı kullanıcı sunucudan **`BANLANDI`** <:ban:1052661140926242866>",
-                "bannedByString": "<:1yetkili:1057739046635458742> {author} tarafından banlandı",
-                "botNoPermission": "<:hata:1052661120692932688> Maalesef **`BAN MEMBERS``** iznim yok.",
-                "description": "Birini sunucudan yasakla",
-                "slashMemberIDDescription": "Kimi yasaklamayı istiyorsun?",
-                "slashReasonDescription": "Yasak nedeni",
-                "usage": "{prefix}ban <@etiket | id> [neden]",
-                "userBanned": "<:hey:1057738200426233866> **{guildName} adlı sunucudan **`BANLANDINIZ.`****",
-                "userNoBannable": "<:kapali:1053270585410592790> Üzgünüm ama bu üyeyi **`BANLAYAMAM`**",
-                "userNoPermission": "<:hata:1052661120692932688> Maalesef bu komutu kullanmak için **`BAN MEMBERS`** izniniz yok."
-            },
-            "categoryName": "MODERASYON",
-            "common": {
-                "noReasonString": "[Neden Belirtilmedi]",
-                "noUserSpecified": "Lütfen birini etiketleyin.",
-                "reasonString": "**NEDEN**"
-            },
-            "infractions": {
-                "description": "Bir kullanıcının ihlallerini göster",
-                "embedAuthorText": "<:mmm2:1057706766550442094> {user} adlı kullanıcının ihlalleri",
-                "noInfractions": "<a:gaz_kalp:1053361772528160768> İhlal yok.",
-                "slashMemberDescription": "Kimin ihlallerini görmek İSTİYORSUN",                
-                "usage": "{prefix}infractions [@mention | id]"
-            },
-            "kick": {
-                "botNoPermission": "<:hata:1052661120692932688> Üzgünüm, **`KICK MEMBERS`** iznim yok.",
-                "description": "Kullanıcıları sunucudan atarsınız",
-                "kickFail": "<:hata:1052661120692932688> Kullanıcı sunucudan **`ATILAMADI`**, çünkü: `{message}`",
-                "kickSuccess": "<:tamamlandi:1052661080213684234> **{user}** adlı kullanıcı sunucudan **`ATILDI`** <:kick:1057737690218496051>",
-                "kickedByString": "<:1yetkili:1057739046635458742> {author} tarafından postalandı :)",
-                "slashMemberDescription": "Kime tekme atmak istersin?",
-                "slashReasonDescription": "Atma nedeni",
-                "usage": "{prefix}kick <@mention | id> [NEDEN]",
-                "userKicked": "<:kick:1057737650846584884> **{guildName}** ADLI SUNUCUDAN **`ATILDINIZ`**",
-                "userNoKickable": "<:kapali:1053270585410592790> Üzgünüm, bu üyeyi sunucudan **`ATAMAM!`**",
-                "userNoPermission": "<:kapali:1053270585410592790> Üzgünüm, **`KICK MEMBERS`** izniniz yok!"
-            },
-            "modlogs": {
-                "channel": {
-                    "current": "Mevcut Moderasyon Log Kanalı: <#{channel}>",
-                    "invalid": "Geçersiz Kanal!, Bir Yazı Kanalı Seçmelisin.",
-                    "noChannel": "Moderasyon Log Kanalı Ayarlanmadı!",
-                    "success": "<#{channel}> adlı kanal moderasyon kanalı olarak ayarlandı."
-                },
-                "description": "Moderasyon log özellik ayarlarını değiştir",
-                "disable": "Moderaasyon logları **`KAPALI`**",
-                "embedTitle": "Moderasyon Logları",
-                "enable": "Moderasyon logları **`AÇIK`**",
-                "newChannelText": "Yeni Kanal",
-                "slashChannelDescription": "Moderasyon log kanallarını görüntüle veya değiştir",
-                "slashChannelNewChannelOption": "New channel for the moderation logs",
-                "slashDisableDescription": "Disable the moderation logs feature",
-                "slashEnableDescription": "Enable the moderation logs feature",
-                "usage": "{prefix}modlogs"
-            },
-            "mute": {
-                "alreadyMuted": "<:tamamlanmadi:1052661100145033216> Kullanıcı zaten **`MUTELENMİŞ`**",
-                "botNoPermission": "<:tamamlanmadi:1052661100145033216> Üzgünüm, **`MANAGE ROLES`** iznim yok.",
-                "cantMuteOwner": "<a:ooo:1053271663816482837> Sunucu sahibine mute atmak mı? **`DON'T DO THAT :)`**",
-                "description": "Sunucudaki üyeleri sustur",
-                "muteFail": "<:tamamlanmadi:1052661100145033216> Üzgünüm **`MUTELEYEMEDİM`**, çünkü: `{message}`",
-                "muteSuccess": "<:tamamlandi:1052661080213684234> **{user}**  adlı kullanıcı **`SUSTURULDU` <mute1057737781310410892>**",
-                "mutedByString": "<:1yetkili:1057739046635458742> {author} tarafından susturuldu",
-                "noRole": "<:hata:1052661120692932688> Mute rolü ayarlanmamış, Lütfen ayarlayıp tekrar deneyin! `{prefix}setmute`",
-                "slashMemberDescription": "Kimi susturmak istiyorsun?",
-                "slashReasonDescription": "Susturma nedeni",
-                "usage": "{prefix}mute <@mention | id> [NEDEN]",
-                "userMuted": "<mute1057737781310410892> **{guildName}** adlı sunucudan **`SUSTURULDUN`**!",
-                "userNoPermission": "<:tamamlanmadi:1052661100145033216> Üzgünüm Çaylak.. **`MANAGE ROLES`** yetkin yok!"
-            },
-            "purge": {
-                "botNoPermission": "<:tamamlanmadi:1052661100145033216> Üzgünüm, **`MANAGE MESSAGES`** iznim yok",
-                "description": "Mesajları sil",
-                "invalidAmount": "<:hata:1052661120692932688> Lütfen silinecek mesaj adetini giriniz",
-                "purgeFail": "<:hata:1052661120692932688> Mesajlar **`TEMİZLENEMİYOR`**, çünkü: `{message}`",
-                "purgeSuccess": "{amount, plural, one {**`1`**} other {**`#`**}} adet mesaj **`TEMİZLENDİ`**",
-                "slashAmountDescription": "Silinecek mesaj sayısı",
-                "usage": "{prefix}purge <adet>",
-                "userNoPermission": "<:tamamlanmadi:1052661100145033216> Üzgünüm,bu komutu kullanmak için **`MANAGE MESSAGES`** izniniz yok."
-            },
-            "setmute": {
-                "description": "Mute Rolünü Ayarla",
-                "invalidRole": "<:hata:1052661120692932688> Rol bulunamadı.",
-                "slashRoleDescription": "Sessize almak için kullanılacak rol",
-                "success": "<:tamamlandi:1052661080213684234> Mute rolü <@&{role}> olarak ayarlandı",
-                "usage": "{prefix}setmute <role>"
-            },
-            "unban": {
-                "alreadyUnban": "<:hata:1052661120692932688> Kullanıcı zaten banlı  **`DEĞİL`**",
-                "description": "Birinin sunucudaki banını kaldırın",
-                "slashMemberDescription": "Kimin banını açıcaz?",
-                "slashReasonDescription": "Ban açma nedeni",
-                "unbanSuccess": "<:tamamlandi:1052661080213684234> **{user}** adlı kullanıcının banı **`AÇILDI`**.",
-                "unbanFail": "<:tamamlanmadi:1052661100145033216> Kullanıcının banı **`AÇILAMIYOR`**, çünkü: `{message}`",
-                "unbannedByString": "<:1yetkili:1057739046635458742> Ban {author} tarafından açıldı",
-                "usage": "{prefix}unban <id> [NEDEN]"
-            },
-            "unmute": {
-                "description": "Susturma açma",
-                "noMuted": "<:tamamlanmadi:1052661100145033216> Kullanıcı zaten **`SUSTURULMAMIŞ`**",
-                "slashMemberDescription": "Kimin mutesini açıcaksın?",
-                "slashReasonDescription": "Açılma nedeni",
-                "unmuteFail": "<:tamamlanmadi:1052661100145033216> Kullanıcının mutesi **`AÇILMADI`** , çünkü: `{message}`",
-                "unmuteSuccess": "<:tamamlandi:1052661080213684234> **{user}** adlı kullanıcının mutesi açıldı",
-                "unmutedByString": "<:1yetkili:1057739046635458742> Susturma {author} tarafından açıldı.",
-                "usage": "{prefix}unmute <@mention | id> [NEDEN]",
-                "userUnmuted": "<:tamamlandi:1052661080213684234> **{guildName}** adlı sunucuda **`SUSTURMAN AÇILDI`**"
-            },
-            "warn": {
-                "description": "Üyeyi sunucuda uyar",
-                "noDM": "<a:warn:1057737741045084181> Bu kullanıcıyla DM oluşturulamıyor, ancak onları uyarmaya devam edeceğim.",
-                "slashMemberDescription": "kimi uyaracaksın?",
-                "slashReasonDescription": "uyarı nedeni",
-                "usage": "{prefix}warn <@mention | id> [reason]",
-                "userNoPermission": "<:tamamlanmadi:1052661100145033216> Maalesef bu komutu kullanmak için **`SUNUCUYU YÖNET'** izniniz yok.",
-                "userWarned": "<a:warn:1057737741045084181> **{guildName}** adlı sunucuda  **`UYARILDINIZ`**",
-                "warnSuccess": "<:tamamlandi:1052661080213684234> **{user}** adlı kullanıcı sunucuda **`UYURALDI`** <a:warn:1057737741045084181>",
-                "warnedByString": "<:1yetkili:1057739046635458742> {author} tarafından uyarıldı"
-            }
-        },
-        "music": {
-            "categoryName": "MUSIC",
-            "dj": {
-                "description": "DJ özellik ayarlarını değiştir",
-                "disable": "devre dışı",
-                "disableText": "DJ özelliği **`DEVRE DIŞI`** oldu",
-                "embedTitle": "DJ özelliği",
-                "enable": "Etkinleştirilmiş",
-                "enableText": "DJ özelliği **'ETKİN'** oldu",
-                "newRoleText": "yeni rol",
-                "role": {
-                    "current": "Mevcut DJ rolü: <@&{role}>",
-                    "invalid": "geçersiz rol.",
-                    "noRole": "DJ rolü belirlenmedi, lütfen `{prefix}` dj rolü ile ayarlayın",
-                    "success": "DJ rolü <@&{role}> olarak ayarlandı"
-                },
-                "slashDisableDescription": "DJ özelliğini devre dışı bırakın",
-                "slashEnableDescription": "DJ özelliğini etkinleştir",
-                "slashRoleDescription": "DJ rolünü görüntüleyin veya değiştirin",
-                "slashRoleNewRoleOption": "DJ'e yeni rol"
-            },
-            "lyrics": {
-                "apiError": "API **{song}** şarkısını bulamadı çünkü: `{message}`",
-                "description": "Şarkının sözlerini göster",
-                "noQuery": "Oynayan hiçbir şey yok veya hiçbir argüman sunulmuyor.",
-                "slashDescription": "aranacak şarkı",
-                "usage": "{prefix}lyrics [song]"
-            },
-            "nowplaying": {
-                "description": "Medya oynatıcı durumunu göster",
-                "disableButton": "Önceki düğmeler artık etkin değildir ve kaldırılmıştır.",
-                "emptyQueue": "Sıra boş."
-            },
-            "pause": {
-                "alreadyPause": "Müzik çalar zaten duraklatılmış.",
-                "description": "Müzik çaları duraklat",
-                "pauseMessage": "Müzik çalar duraklatıldı."
-            },
-            "play": {
-                "alreadyPlaying": "Müzik çalar zaten **`{voiceChannel}`** ses kanalını çalıyor.",
-                "description": "biraz müzik çal",
-                "noSongData": "Bu URL'de herhangi bir şarkı verisi yok.",
-                "slashQueryDescription": "Aramak için sorgula",
-                "usage": "{prefix}play <query | url>"
-            },
-            "queue": {
-                "description": "Sıra listesini göster"
-            },
-            "remove": {
-                "description": "Şarkıları sıradan kaldır",
-                "noPermission": "Bu komutu kullanma izniniz yok.",
-                "noPositions": "Lütfen kaldırılacak şarkı konumlarını belirtin.",
-                "slashPositionsDescription": "Kaldırılacak şarkıların virgül veya boşlukla ayrılmış konumu",
-                "songSkip": "Geçerli şarkı kaldırıldı, şarkı atlandı.\n\n",
-                "songsRemoved": "Sıradan {remowed, plural, bir {1song} diğer {#songs}} kaldırıldı",
-                "usage": "{prefix}remove <positions>"
-            },
-            "repeat": {
-                "actualMode": "Geçerli yineleme modu: **`{mode}`**",
-                "description": "Geçerli müziği veya sırayı tekrarla",
-                "footer": "Modu değiştirmek için {prefix}yardım tekrarına bakın",
-                "newMode": "Tekrar modu **`{mode}`** olarak ayarlandı",
-                "slashDisable": "tekrar modunu devre dışı bırak",
-                "slashQueue": "Yineleme modunu **`QUEUE`** olarak ayarlayın",
-                "slashSong": "Tekrar modunu **`ŞARKI`** olarak ayarlayın",
-                "usage": "'{prefix}'repeat <{options}>"
-            },
-            "resume": {
-                "alreadyResume": "Müzik çalar duraklatılmamış.",
-                "description": "Müzik çaları devam ettir",
-                "resumeMessage": "Müzik çalar yeniden başlatıldı."
-            },
-            "search": {
-                "cancelMessage": "Müzik seçimini iptal etmek için {cancel} veya c yazın.",
-                "canceledMessage": "Müzik seçimi iptal edildi.",
-                "description": "Sağlanan sorguyu kullanarak biraz müzik çalın",
-                "interactionContent": "Lütfen biraz müzik seçin",
-                "interactionPlaceholder": "Lütfen biraz müzik seçin",
-                "noQuery": "Lütfen aranacak bir sorgu sağlayın.",
-                "noSelection": "Değer girilmedi veya geçersiz, müzik seçimi iptal edildi.",
-                "noTracks": "Herhangi bir arama sonucu alamıyorum.",
-                "queueEmbed": "Lütfen biraz müzik seçin; boşluk bırakarak birden fazla seçim yapabilirsiniz veya {separator}.\n",
-                "slashDescription": "Belirtilen müziği arayın",
-                "slashQueryDescription": "Aramak için sorgula",
-                "slashSourceDescription": "Müziğin nereye götürülmesi gerektiği?",
-                "trackSelectionMessage": "Müzik Seçimi",
-                "usage": "{prefix}search <query> [source]"
-            },
-            "shuffle": {
-                "actualState": "Geçerli karıştırma modu **`{state}`**",
-                "description": "Karıştırma özelliği için modu ayarla",
-                "newState": "Karıştırma modu artık şu şekilde ayarlanmıştır:**`{state}`**"
-            },
-            "skip": {
-                "description": "müziği atla",
-                "skipMessage": "**{song}** geçildi ",
-                "voteResultMessage": "{length}/{required} mevcut şarkıyı atlamak için oy kullandı"
-            },
-            "skipTo": {
-                "cantPlay": "Geçerli müziğe atlayamazsınız.",
-                "description": "Kuyrukta belirli bir konuma atla",
-                "noPermission": "Bu komutu kullanma izniniz yok.",
-                "noSongPosition": "Bu konumda bir şarkı bulunamadı.",
-                "skipMessage": "**{song}**'ya atlandı",
-                "slashFirstDescription": "Sıradaki ilk şarkıya geri sar",
-                "slashLastDescription": "Sıradaki son şarkıya atla",
-                "slashPositionDescription": "Sıradaki şarkı konumu",
-                "slashSpecificDescription": "Kuyrukta belirli bir konuma atla",
-                "usage": "'{prefix}'skip <{seçenekler} | sayı>"
-            },
-            "stayInQueue": {
-                "247Disabled": "Sesli kanalda kal komutu devre dışı bırakıldı",
-                "actualState": "Seste kalma özelliği **`{state}`**",
-                "description": "Kuyruk bittiğinde botun ses kanalında kalmasını sağlar",
-                "newState": "Seste kal özelliği **`{state}`** olarak ayarlandı",
-                "slashDescription": "Seste kalma özelliği için modu değiştirir"
-            },
-            "stop": {
-                "description": "Müziği durdurur",
-                "stoppedMessage": "Müzik çalar durduruldu."
-            },
-            "volume": {
-                "changeVolume": "Ses seviyesini değiştirmek için, bu komutu kullanırken yapmak istediğiniz ses seviyesini yazın.",
-                "currentVolume": "Mevcut ses hacmi : **`{volume}`**",
-                "description": "Medya oynatıcı sesini değiştirin ",
-                "newVolume": "Ses **`{volume}`** olarak ayarlandı",
-                "plsPause": "Lütfen sesi **`{volume}` olarak ayarlamak yerine müziği duraklatın.",
-                "slashDescription": "Ses seviyesi",
-                "usage": "{prefix}volume [Ses seviyesi]",
-                "volumeLimit": "Ses seviyesini yukarıya ayarlayamıyorum.. **`{maxVol}`**"
-            }
-        }
-    },
-    "events": {
-        "channelUpdate": {
-            "connectionReconfigured": "Bağlantı başarıyla yeniden yapılandırıldı",
-            "reconfigureConnection": "Ses kanalı bölgesi değiştirildi, bağlantı yeniden yapılandırılıyor...",
-            "unableReconfigureConnection": "Bağlantı yeniden yapılandırılamadı, sıra silindi"
-        },
-        "createInteraction": {
-            "message1": "Üzgünüm, ancak bu etkileşim yalnızca <@{user}> ve sunucu personeli arasındadır.",
-            "message2": "Üzgünüm, ancak bu etkileşim yalnızca <@{user}> aittir. "
-        },
-        "createMessage": "<a:astra:1057782656567345232> Herhangi bir sorun ile karşılaşırsanız lütfen iletişime geçin!\n<:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385>\n<:acik:1052661060492087296> **Prefix:** **`!`**\n<:yonetici:1052661245649621073> **Discord Hesabı:** [İtalyan#0142](https://discord.com/users/979781952343277568)\n<:instagram:1052661328923336744> **Instagram Hesabı:** [roi.xyz](https://instagram.com/roi.xyz?igshid=YmMyMTA2M2Y=)\n<:discord:1052661591788765255> **Discord Sunucusu:** [gizem kurt](https://discord.gg/gizemkurt)\n<:paylas:1052661307859533855> **Yetkisiz Bot Davet Linki:** [Tıkla](https://discord.com/api/oauth2/authorize?client_id=1048987730983534612&permissions=0&scope=bot%20applications.commands)\n<:paylas:1052661307859533855> **Yönetici Yetkisi ile botu davet et:** [Tıkla](https://discord.com/api/oauth2/authorize?client_id=1048987730983534612&permissions=8&scope=bot%20applications.commands)\n<:web:1052661186832904203> Discord Bot Website: [Tıkla](https://matrix-snowy.vercel.app/)\n<:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385>\n<a:mmm:1057739088431681537> **Bana discord üzerinden daha hızlı bir şekilde ulaşabilirsiniz!**",
-        "cmdLoading": "Bot Açılıyor..| Kodlar Güncelleniyor.. | Kısa süre içinde aktif olucaktır!",
-        "voiceStateUpdate": {
-            "connectionReconfigured": "Bağlantı başarıyla yeniden yapılandırıldı",
-            "deleteQueue": "**`1 DAKİKA`** boyunca ses kanalına kimse katılmadı, sıra silindi!",
-            "deleteQueueFooter": "Sıra silindi.",
-            "disconnectFromVCMessage": "Ses kanalıyla bağlantı kesildi, sıra silindi.",
-            "joinStageMessage": "Sahne kanalına Konuşmacı olarak başarıyla katıldı.",
-            "joiningAsSpeaker": "Sahne kanalına taşındı, Konuşmacı olarak katılmaya çalışılıyor...",
-            "pauseQueue": "Herkes ses kanalından ayrıldı. Kaynakları kurtarmak için sıra duraklatıldı.\nEğer **`1 DAKİKA`** boyunca kimse sesli kanala bağlanmazsa sıra temizlenecek!",
-            "pauseQueueFooter": "Sıra duraklatıldı",
-            "reconfigureConnection": "Farklı bir bölgeye sahip bir ses kanalına taşındı, bağlantı yeniden yapılandırılıyor...",
-            "resumeQueue": "Birisi ses kanalına katıldı.\n Devam ediliyor **{song}**",
-            "resumeQueueFooter": "Sıra devam ettirildi",
-            "unableJoinStageMessage": "Konuşmacı olarak katılamıyorum, sıra silindi.",
-            "unableReconfigureConnection": "Bağlantı yeniden yapılandırılamadı, sıra silindi."
-        }
-    },
-    "reusable": {
-        "invalidUsage": "Geçersiz kullanım, daha fazla bilgi için lütfen **`{prefix} {name}`** komutunu kullanın",
-        "pageFooter": "Sayfa {actual} / {total} "
-    },
-    "utils": {
-        "cooldownMessage": "{author}, Lütfen **`{timeleft}`** süresi boyunca bekleyin",
-        "generalHandler": {
-            "errorJoining": "Ses kanalına katılırken hata oluştu, çünkü: `{message}`",
-            "errorPlaying": "Müzik çalmaya çalışırken bir hata oluştu, çünkü: `{message}`",
-            "handleVideoInitial": "Kuyruğa {length} şarkı eklendi ",
-            "leftVC": "Uzun süredir aktif olmadığım için seslendirme kanalından ayrıldım.",
-            "queueEnded": "Kuyruk sona erdi, daha fazla müzik çalmak için ** `{usage}` ** kullan",
-            "startPlaying": "**{song}** adlı şarkı oynatılıyor..",
-            "stopPlaying": "**{song} adlı şarkı durduruldu.**"
-        },
-        "musicDecorator": {
-            "noInVC": "Bu komutu kullanabilmek için sesli kanalda olmanız gerekiyor!",
-            "noQueue": "Hiçbir şey oynatılmıyor",
-            "sameVC": "Benimle aynı ses kanalında olmalısın!",
-            "validVCJoinable": "Maalesef ses kanalınıza **`BAĞLANMA` yetkim yok**, uygun izinlere sahip olduğumdan emin olun.",
-            "validVCPermission": "Maalesef ses kanalınızda **`KONUŞMA`** yetkim yok, uygun izinlere sahip olduğumdan emin olun."
-        }
-    }
+	"commands": {
+		"developers": {
+			"categoryName": "DEVELOPER",
+			"eval": {
+				"description": "Bot için değerlendirin.",
+				"errorString": "Hata!",
+				"noCode": "Kod sağlanmadı",
+				"inputString": "Giriş",
+				"outputString": "Çıktı",
+				"usage": "{prefix}eval <some code>"
+			}
+		},
+		"general": {
+			"about": {
+				"aboutFooter": "{botname} -  Bot Bilgileri ❤️",
+				"botUptimeString": "Bot Uptime",
+				"botVersionString": "Bot versiyonu",
+				"cachedUsersString": "Önbelleğe alınmış kullanıcılar",
+				"channelsString": "Kanallar",
+				"commitString": "işlem",
+				"description": "Botun bilgilerini göster",
+				"discordJSVersionString": "Discord.js version",
+				"ffmpegVersionString": "FFmpeg version",
+				"nodeVersionString": "Node.js version",
+				"osUptimeString": "OS Uptime",
+				"processUptimeString": "Process Uptime",
+				"serversString": "Sunucular",
+				"sourceCodeString": "Kaynak Kodlar:"
+			},
+			"categoryName": "GENEL",
+			"help": {
+				"aliasesString": "Aliases",
+				"authorString": "{username} - Komut Listesi",
+				"commandDetailTitle": "{username} - {command} Komutu hakkında bilgi",
+				"commandSelectionString": "Lütfen bir komut seçin",
+				"commandUsageFooter": "<> = gereklidir | [] = İsteğe bağlı {devOnly}",
+				"description": "Belirli bir komut için, komut listesini veya bilgileri gösterir",
+				"descriptionString": "Açıklama",
+				"footerString": "{prefix}help <command> Belirli bir komut hakkında daha fazla bilgi almanızı sağlar",
+				"nameString": "İsim",
+				"noCommanSuggest": "Eşleşen komut adı bulunamadı. Bunu mu demek istedin?",
+				"noCommand": "Eşleşen herhangi bir komut adı bulunamadı ",
+				"slashDescription": "Komutla ilgili belirli bilgileri görüntülemek için komut adı",
+				"usage": "{prefix}help [command]",
+				"usageString": "Kullanım"
+			},
+			"invite": {
+				"clickURL": "<:davet:1057737630164459520> Botu sunucuza davet etmek için **[Buraya Tıkla]({url})**  ",
+				"description": "Botun Davet Linki",
+				"inviteTitle": "{bot} - Davet Linki"
+			},
+			"ping": {
+				"description": "Botun mevcut pingini gösterir",
+				"footerString": "{user} Gecikme süresi"
+			}
+		},
+		"music": {
+			"categoryName": "MÜZİK",
+			"dj": {
+				"description": "DJ özellik ayarlarını değiştir",
+				"disable": "devre dışı",
+				"disableText": "DJ özelliği **`DEVRE DIŞI`** oldu",
+				"embedTitle": "DJ özelliği",
+				"enable": "Etkinleştirilmiş",
+				"enableText": "DJ özelliği **'ETKİN'** oldu",
+				"newRoleText": "yeni rol",
+				"role": {
+					"current": "Mevcut DJ rolü: <@&{role}>",
+					"invalid": "geçersiz rol.",
+					"noRole": "DJ rolü belirlenmedi, lütfen `{prefix}` dj rolü ile ayarlayın",
+					"success": "DJ rolü <@&{role}> olarak ayarlandı"
+				},
+				"slashDisableDescription": "DJ özelliğini devre dışı bırakın",
+				"slashEnableDescription": "DJ özelliğini etkinleştir",
+				"slashRoleDescription": "DJ rolünü görüntüleyin veya değiştirin",
+				"slashRoleNewRoleOption": "DJ'e yeni rol"
+			},
+			"lyrics": {
+				"apiError": "API **{song}** şarkısını bulamadı çünkü: `{message}`",
+				"description": "Şarkının sözlerini göster",
+				"noQuery": "Oynayan hiçbir şey yok veya hiçbir argüman sunulmuyor.",
+				"slashDescription": "aranacak şarkı",
+				"usage": "{prefix}lyrics [song]"
+			},
+			"nowplaying": {
+				"description": "Medya oynatıcı durumunu göster",
+				"disableButton": "Önceki düğmeler artık etkin değildir ve kaldırılmıştır.",
+				"emptyQueue": "Sıra boş."
+			},
+			"pause": {
+				"alreadyPause": "Müzik çalar zaten duraklatılmış.",
+				"description": "Müzik çaları duraklat",
+				"pauseMessage": "Müzik çalar duraklatıldı."
+			},
+			"play": {
+				"alreadyPlaying": "Müzik çalar zaten **`{voiceChannel}`** ses kanalını çalıyor.",
+				"description": "biraz müzik çal",
+				"noSongData": "Bu URL'de herhangi bir şarkı verisi yok.",
+				"slashQueryDescription": "Aramak için sorgula",
+				"usage": "{prefix}play <query | url>"
+			},
+			"queue": {
+				"description": "Sıra listesini göster"
+			},
+			"remove": {
+				"description": "Şarkıları sıradan kaldır",
+				"noPermission": "Bu komutu kullanma izniniz yok.",
+				"noPositions": "Lütfen kaldırılacak şarkı konumlarını belirtin.",
+				"slashPositionsDescription": "Kaldırılacak şarkıların virgül veya boşlukla ayrılmış konumu",
+				"songSkip": "Geçerli şarkı kaldırıldı, şarkı atlandı.\n\n",
+				"songsRemoved": "Sıradan {remowed, plural, bir {1song} diğer {#songs}} kaldırıldı",
+				"usage": "{prefix}remove <positions>"
+			},
+			"repeat": {
+				"actualMode": "Geçerli yineleme modu: **`{mode}`**",
+				"description": "Geçerli müziği veya sırayı tekrarla",
+				"footer": "Modu değiştirmek için {prefix}yardım tekrarına bakın",
+				"newMode": "Tekrar modu **`{mode}`** olarak ayarlandı",
+				"slashDisable": "tekrar modunu devre dışı bırak",
+				"slashQueue": "Yineleme modunu **`QUEUE`** olarak ayarlayın",
+				"slashSong": "Tekrar modunu **`ŞARKI`** olarak ayarlayın",
+				"usage": "'{prefix}'repeat <{options}>"
+			},
+			"resume": {
+				"alreadyResume": "Müzik çalar duraklatılmamış.",
+				"description": "Müzik çaları devam ettir",
+				"resumeMessage": "Müzik çalar yeniden başlatıldı."
+			},
+			"search": {
+				"cancelMessage": "Müzik seçimini iptal etmek için {cancel} veya c yazın.",
+				"canceledMessage": "Müzik seçimi iptal edildi.",
+				"description": "Sağlanan sorguyu kullanarak biraz müzik çalın",
+				"interactionContent": "Lütfen biraz müzik seçin",
+				"interactionPlaceholder": "Lütfen biraz müzik seçin",
+				"noQuery": "Lütfen aranacak bir sorgu sağlayın.",
+				"noSelection": "Değer girilmedi veya geçersiz, müzik seçimi iptal edildi.",
+				"noTracks": "Herhangi bir arama sonucu alamıyorum.",
+				"queueEmbed": "Lütfen biraz müzik seçin; boşluk bırakarak birden fazla seçim yapabilirsiniz veya {separator}.\n",
+				"slashDescription": "Belirtilen müziği arayın",
+				"slashQueryDescription": "Aramak için sorgula",
+				"slashSourceDescription": "Müziğin nereye götürülmesi gerektiği?",
+				"trackSelectionMessage": "Müzik Seçimi",
+				"usage": "{prefix}search <query> [source]"
+			},
+			"shuffle": {
+				"actualState": "Geçerli karıştırma modu **`{state}`**",
+				"description": "Karıştırma özelliği için modu ayarla",
+				"newState": "Karıştırma modu artık şu şekilde ayarlanmıştır:**`{state}`**"
+			},
+			"skip": {
+				"description": "müziği atla",
+				"skipMessage": "**{song}** geçildi ",
+				"voteResultMessage": "{length}/{required} mevcut şarkıyı atlamak için oy kullandı"
+			},
+			"skipTo": {
+				"cantPlay": "Geçerli müziğe atlayamazsınız.",
+				"description": "Kuyrukta belirli bir konuma atla",
+				"noPermission": "Bu komutu kullanma izniniz yok.",
+				"noSongPosition": "Bu konumda bir şarkı bulunamadı.",
+				"skipMessage": "**{song}**'ya atlandı",
+				"slashFirstDescription": "Sıradaki ilk şarkıya geri sar",
+				"slashLastDescription": "Sıradaki son şarkıya atla",
+				"slashPositionDescription": "Sıradaki şarkı konumu",
+				"slashSpecificDescription": "Kuyrukta belirli bir konuma atla",
+				"usage": "'{prefix}'skip <{seçenekler} | sayı>"
+			},
+			"stayInQueue": {
+				"247Disabled": "Sesli kanalda kal komutu devre dışı bırakıldı",
+				"actualState": "Seste kalma özelliği **`{state}`**",
+				"description": "Kuyruk bittiğinde botun ses kanalında kalmasını sağlar",
+				"newState": "Seste kal özelliği **`{state}`** olarak ayarlandı",
+				"slashDescription": "Seste kalma özelliği için modu değiştirir"
+			},
+			"stop": {
+				"description": "Müziği durdurur",
+				"stoppedMessage": "Müzik çalar durduruldu."
+			},
+			"volume": {
+				"changeVolume": "Ses seviyesini değiştirmek için, bu komutu kullanırken yapmak istediğiniz ses seviyesini yazın.",
+				"currentVolume": "Mevcut ses hacmi : **`{volume}`**",
+				"description": "Medya oynatıcı sesini değiştirin ",
+				"newVolume": "Ses **`{volume}`** olarak ayarlandı",
+				"plsPause": "Lütfen sesi **`{volume}` olarak ayarlamak yerine müziği duraklatın.",
+				"slashDescription": "Ses seviyesi",
+				"usage": "{prefix}volume [Ses seviyesi]",
+				"volumeLimit": "Ses seviyesini yukarıya ayarlayamıyorum.. **`{maxVol}`**"
+			}
+		},
+		
+	"events": {
+		"channelUpdate": {
+			"connectionReconfigured": "Bağlantı başarıyla yeniden yapılandırıldı",
+			"reconfigureConnection": "Ses kanalı bölgesi değiştirildi, bağlantı yeniden yapılandırılıyor...",
+			"unableReconfigureConnection": "Bağlantı yeniden yapılandırılamadı, sıra silindi"
+		},
+		"createInteraction": {
+			"message1": "Üzgünüm, ancak bu etkileşim yalnızca <@{user}> ve sunucu personeli arasındadır.",
+			"message2": "Üzgünüm, ancak bu etkileşim yalnızca <@{user}> aittir. "
+		},
+		"createMessage": "<a:astra:1057782656567345232> Herhangi bir sorun ile karşılaşırsanız lütfen iletişime geçin!\n<:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385>\n<:acik:1052661060492087296> **Prefix:** **`!`**\n<:yonetici:1052661245649621073> **Discord Hesabı:** [İtalyan#0142](https://discord.com/users/979781952343277568)\n<:instagram:1052661328923336744> **Instagram Hesabı:** [roi.xyz](https://instagram.com/roi.xyz?igshid=YmMyMTA2M2Y=)\n<:discord:1052661591788765255> **Discord Sunucusu:** [gizem kurt](https://discord.gg/gizemkurt)\n<:paylas:1052661307859533855> **Yetkisiz Bot Davet Linki:** [Tıkla](https://discord.com/api/oauth2/authorize?client_id=1048987730983534612&permissions=0&scope=bot%20applications.commands)\n<:paylas:1052661307859533855> **Yönetici Yetkisi ile botu davet et:** [Tıkla](https://discord.com/api/oauth2/authorize?client_id=1048987730983534612&permissions=8&scope=bot%20applications.commands)\n<:web:1052661186832904203> Discord Bot Website: [Tıkla](https://matrix-snowy.vercel.app/)\n<:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385><:cizgi:1057706793888907385>\n<a:mmm:1057739088431681537> **Bana discord üzerinden daha hızlı bir şekilde ulaşabilirsiniz!**",
+		"cmdLoading": "Kodlar Güncelleniyor.. | Bot kısa süre içinde kullanıma açılacaktır!",
+		"voiceStateUpdate": {
+			"connectionReconfigured": "Bağlantı başarıyla yeniden yapılandırıldı",
+			"deleteQueue": "**`1 DAKİKA`** boyunca ses kanalına kimse katılmadı, sıra silindi!",
+			"deleteQueueFooter": "Sıra silindi.",
+			"disconnectFromVCMessage": "Ses kanalıyla bağlantı kesildi, sıra silindi.",
+			"joinStageMessage": "Sahne kanalına Konuşmacı olarak başarıyla katıldı.",
+			"joiningAsSpeaker": "Sahne kanalına taşındı, Konuşmacı olarak katılmaya çalışılıyor...",
+			"pauseQueue": "Herkes ses kanalından ayrıldı. Kaynakları kurtarmak için sıra duraklatıldı.\nEğer **`1 DAKİKA`** boyunca kimse sesli kanala bağlanmazsa sıra temizlenecek!",
+			"pauseQueueFooter": "Sıra duraklatıldı",
+			"reconfigureConnection": "Farklı bir bölgeye sahip bir ses kanalına taşındı, bağlantı yeniden yapılandırılıyor...",
+			"resumeQueue": "Birisi ses kanalına katıldı.\n Devam ediliyor **{song}**",
+			"resumeQueueFooter": "Sıra devam ettirildi",
+			"unableJoinStageMessage": "Konuşmacı olarak katılamıyorum, sıra silindi.",
+			"unableReconfigureConnection": "Bağlantı yeniden yapılandırılamadı, sıra silindi."
+		}
+	},
+	"reusable": {
+		"invalidUsage": "Geçersiz kullanım, daha fazla bilgi için lütfen **`{prefix} {name}`** komutunu kullanın",
+		"pageFooter": "Sayfa {actual} / {total} "
+	},
+	"utils": {
+		"cooldownMessage": "{author}, Lütfen **`{timeleft}`** süresi boyunca bekleyin",
+		"generalHandler": {
+			"errorJoining": "Ses kanalına katılırken hata oluştu, çünkü: `{message}`",
+			"errorPlaying": "Müzik çalmaya çalışırken bir hata oluştu, çünkü: `{message}`",
+			"handleVideoInitial": "Kuyruğa {length} şarkı eklendi ",
+			"leftVC": "Uzun süredir aktif olmadığım için seslendirme kanalından ayrıldım.",
+			"queueEnded": "Kuyruk sona erdi, daha fazla müzik çalmak için ** `{usage}` ** kullan",
+			"startPlaying": "**{song}** adlı şarkı oynatılıyor..",
+			"stopPlaying": "**{song} adlı şarkı durduruldu.**"
+		},
+		"musicDecorator": {
+			"noInVC": "Bu komutu kullanabilmek için sesli kanalda olmanız gerekiyor!",
+			"noQueue": "Hiçbir şey oynatılmıyor",
+			"sameVC": "Benimle aynı ses kanalında olmalısın!",
+			"validVCJoinable": "Maalesef ses kanalınıza **`BAĞLANMA` yetkim yok**, uygun izinlere sahip olduğumdan emin olun.",
+			"validVCPermission": "Maalesef ses kanalınızda **`KONUŞMA`** yetkim yok, uygun izinlere sahip olduğumdan emin olun."
+		}
+	}
 }
